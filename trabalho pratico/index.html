@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+
+<style>
+
+body
+{
+    background-color: #67fac9;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* centraliza verticalmente */
+    flex-direction: column;
+}
+
+.botao:hover
+{
+    background-color: #67fac9;
+    color: #000000;
+
+}
+.caixa_larga1
+{
+    width: 365px;
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+}
+
+.caixa_larga2
+{
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+    width: 355px;
+}
+
+.caixa_larga3
+{
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+    width: 285px;
+}
+
+.caixa_larga4
+{
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+    width: 335px;
+}
+
+.caixa_larga5
+{
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+    width: 351px;
+}
+
+.caixa_larga6
+{
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+    width: 340px;
+}
+
+.caixa_larga7
+{
+    font-size: 14px;
+    box-shadow: 1px 1px black;
+    width: 355px;
+}
+.estado
+{
+    box-shadow: 1px 1px black;
+}
+
+.texto
+{
+    width: 330px;
+    height: 20vh;
+    font-size: 12px;
+}
+
+.botoes 
+{
+  display: flex;
+  justify-content: center;
+}
+
+.botoes button 
+{
+  margin: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.botoes button:hover {
+  transform: scale(1.1);
+}
+
+.borda
+{
+border-style: solid;
+border-color: rgb(48, 43, 43);
+border-width: 10px;
+background-color: #ffffff;
+}
+#buttons-container {
+  position: fixed;
+  bottom: -200px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  transition: all 1s ease-in-out;
+}
+
+#buttons-container.show {
+  bottom: 0;
+}
+
+#buttons-container button {
+  margin: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+#buttons-container button:hover {
+  transform: scale(1.1);
+}
+.Menu
+{
+  position: absolute;
+  left: 50%;
+  top: 77%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+<body>
+    <!-- Formulario -->
+    <fieldset class="borda">
+        <fieldset>
+
+        <legend> Cadastro Funcionarios</legend>
+        CPF: <input type="text" class="caixa_larga1" id="CPF">
+        <br> <br>
+
+        Nome: <input type="text" class="caixa_larga2" id="Nome">
+        <br> <br>
+
+        Data Nascimento: <input type="date" class="caixa_larga3" id="DNascimento">
+        <br> <br>
+
+        Endereço: <input type="text" class="caixa_larga4" id="Endereço">
+        <br> <br>
+
+        Cidade: <input type="text" class="caixa_larga5" id="Cidade">
+        <br> <br>
+
+        Telefone: <input type="text" class="caixa_larga6" id="Telefone">
+        <br> <br>
+
+        Bairro: <input type="text" class="caixa_larga7" id="Bairro">
+        <br> <br>
+
+        Sexo:<input type="radio" class="cargos" id="Masculino" name="cargos"> Masculino
+             <input type="radio" class="cargos" id="Femenino" name="cargos"> Femenino
+        <br> <br>
+
+        Estado: <select id="estado" class="estado">
+            <option selected> </option>
+                <option> AC </option>
+                <option> AL </option>
+                <option> AP </option>
+                <option> AM </option>
+                <option> BA </option>
+                <option> CE </option>
+                <option> DF </option>
+                <option> ES </option>
+                <option> GO </option>
+                <option> MA </option>
+                <option> MT </option>
+                <option> MS </option>
+                <option> MG </option>
+                <option> PA </option>
+                <option> PB </option>
+                <option> PR </option>
+                <option> PE </option>
+                <option> PI </option>
+                <option> RJ </option>
+                <option> RN </option>
+                <option> RS </option>
+                <option> RO </option>
+                <option> RR </option>
+                <option> SC </option>
+                <option> SP </option>
+                <option> SE </option>
+                <option> TO </option>
+
+
+        </select>
+    </fieldset>
+    <br> 
+    <br>       
+    <button id="menu" class="Menu">Menu</button>
+
+	<div id="buttons-container">
+		<button><img src="disket.png" style="width: 50px; height: 50px;"><br>Enviar</button>
+		<button><img src="alterar.png" style="width: 70px; height: 50px;"><br>Alterar</button>
+		<button><img src="lista.png" style="width: 50px; height: 50px;"><br>Listar Funcionarios</button>
+		<button><img src="lixeira.png" style="width: 70px; height: 50px;"><br>Excluir</button>
+		<button onclick="limpatudo"><img src="vassoura.png" style="width: 50px; height: 50px;"><br>Limpar campos</button>
+	</div>
+    
+        
+</fieldset>
+
+</body>
+
+
+    <script>
+        function limpatudo()
+        {
+            //Lentras
+            Nome.value = "";
+            CPF.value = "";
+            DNascimento.value = "";
+            Endereço.value = "";
+            Cidade.value = "";
+            Telefone.value = "";
+            Bairro.value = "";
+            estado.value = "";
+            //caixas
+            Masculino.checked = false;
+            Femenino.checked = false;
+
+        }
+        const menuBtn = document.getElementById('menu');
+const closeBtn = document.getElementById('close');
+const buttonsContainer = document.getElementById('buttons-container');
+
+menuBtn.addEventListener('click', function() {
+  buttonsContainer.classList.add('show');
+});
+
+closeBtn.addEventListener('click', function() {
+  buttonsContainer.classList.remove('show');
+});
+    </script>
+</html>
